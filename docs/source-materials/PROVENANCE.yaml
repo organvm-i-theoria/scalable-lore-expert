@@ -1,0 +1,23 @@
+schema_version: '1.0'
+repo: scalable-lore-expert
+org: organvm-i-theoria
+generated: '2026-02-13T03:33:50.429305+00:00'
+total_materials: 2
+materials:
+- filename: Dante's Midlife Crisis Explained.md
+  source_path: /Users/4jp/Workspace/scalable-lore-expert/Dante's Midlife Crisis Explained.md
+  sha256: fc6e686534fc5fcbe894beda864594f9bdd4577d5bcac3cdb4eb455b8454bb83
+  size_bytes: 91992
+  last_modified: '2025-10-03T02:48:58+00:00'
+  classification_rule: direct_repo_match
+  confidence: 1.0
+  target_subdir: docs/source-materials/theory/
+- filename: Design Paths for a Scalable Lore Expert System.docx
+  source_path: /Users/4jp/Workspace/scalable-lore-expert/Design Paths for a Scalable
+    Lore Expert System.docx
+  sha256: 6646873a63ce74285633a5eadf53e35a7825f1d7c8e917c21083d0ac7c6cf465
+  size_bytes: 30744
+  last_modified: '2025-10-14T00:50:00+00:00'
+  classification_rule: direct_repo_match
+  confidence: 1.0
+  target_subdir: docs/source-materials/theory/
