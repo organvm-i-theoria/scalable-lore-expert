@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview: From Concept to Customer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -1rem;
+            transform: translateY(-50%);
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 9999px;
+            background-color: #0074B7;
+            border: 4px solid #E0F7FA;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center h-16 space-x-4 md:space-x-8 text-sm md:text-base">
+                <a href="#vision" class="text-[#003B73] hover:text-[#0074B7] font-semibold">Vision</a>
+                <a href="#blueprint" class="text-[#003B73] hover:text-[#0074B7] font-semibold">Blueprint</a>
+                <a href="#gauntlet" class="text-[#003B73] hover:text-[#0074B7] font-semibold">Gauntlet</a>
+                <a href="#fortress" class="text-[#003B73] hover:text-[#0074B7] font-semibold">Fortress</a>
+                <a href="#launch" class="text-[#003B73] hover:text-[#0074B7] font-semibold">Launch</a>
+                <a href="#financials" class="text-[#003B73] hover:text-[#0074B7] font-semibold">Financials</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16 pt-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003B73] mb-2">Project Overview & Milestones</h1>
+            <p class="text-lg text-[#0074B7]">The ClearView Test Column: From Concept to Customer</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="vision" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003B73] mb-6 text-center">The Vision: Solving a Critical Pain Point</h2>
+                <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                    The project was born from a simple observation: plumbing inspections are inefficient and unsafe due to the "ladder problem." Our vision is to capture a significant portion of a multi-million dollar serviceable market by providing a definitive, professional solution.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-[#E0F7FA] p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-[#0074B7] mb-3">Serviceable Market</h3>
+                        <p class="text-5xl font-extrabold text-[#003B73]">$22M</p>
+                        <p class="text-gray-600 mt-2">The estimated value of professionals who require hydrostatic head tests.</p>
+                    </div>
+                    <div class="bg-[#E0F7FA] p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-[#0074B7] mb-3">Revenue Target (Yr 3)</h3>
+                        <p class="text-5xl font-extrabold text-[#003B73]">$1.1M</p>
+                        <p class="text-gray-600 mt-2">Based on capturing 5% of the serviceable market.</p>
+                    </div>
+                    <div class="bg-[#E0F7FA] p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-[#0074B7] mb-3">Key Value Prop</h3>
+                        <p class="text-5xl font-extrabold text-[#003B73]">100%</p>
+                        <p class="text-gray-600 mt-2">Ladder-free inspection, enhancing on-site safety and efficiency.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="blueprint" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003B73] mb-6 text-center">The Blueprint: Product & Financial Model</h2>
+                 <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                    The Product Requirements Document (PRD) translated market needs into a tangible blueprint. We defined a product that balances durability, usability, and cost, creating a strong financial model with a healthy margin for our distribution partners and our business.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="chart-container h-80 md:h-[400px]">
+                        <canvas id="productModelChart"></canvas>
+                    </div>
+                    <div class="chart-container h-80 md:h-[400px]">
+                        <canvas id="financialModelChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gauntlet" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003B73] mb-6 text-center">The Gauntlet: Validation & Manufacturing Setup</h2>
+                <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                   This phase takes the product from design to reality. A rigorous test plan validates the design against all requirements, while a parallel manufacturing strategy prepares for mass production. This entire setup process is a 12-14 week gauntlet from final design to production readiness.
+                </p>
+                <div class="relative pl-8 border-l-4 border-[#BFD7ED]">
+                    <div class="relative timeline-item mb-8">
+                        <h3 class="text-xl font-bold text-[#0074B7]">Weeks 1-4: Supplier Qualification</h3>
+                        <p class="text-gray-600">Vetting and selecting domestic partners for extrusion and packaging. Key Test: Drop test validation passed.</p>
+                    </div>
+                     <div class="relative timeline-item mb-8">
+                        <h3 class="text-xl font-bold text-[#0074B7]">Weeks 4-10: Tooling & Fixture Fabrication</h3>
+                        <p class="text-gray-600">Extrusion die, assembly jigs, and QC test stations are manufactured. Key Test: Hydrostatic burst pressure confirmed >30 PSI.</p>
+                    </div>
+                     <div class="relative timeline-item mb-8">
+                        <h3 class="text-xl font-bold text-[#0074B7]">Weeks 10-12: PPAP Submission</h3>
+                        <p class="text-gray-600">Supplier submits Production Part Approval Process documents, proving their manufacturing process is stable and capable.</p>
+                    </div>
+                    <div class="relative timeline-item">
+                        <h3 class="text-xl font-bold text-[#0074B7]">Weeks 12-14: Pilot Run & Approval</h3>
+                        <p class="text-gray-600">A 100-unit pilot run validates the entire process. Upon approval, we are ready for mass production.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fortress" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003B73] mb-6 text-center">The Fortress: Intellectual Property Shield</h2>
+                <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                    To protect our innovation and brand, we built a fortress of intellectual property. Each type of IP protects a different aspect of the product, creating overlapping layers of defense against competitors.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#0074B7] mb-3">Copyright</h3>
+                        <p class="text-gray-600 mb-4">Protects the expression in creative works like our user manual and technical drawings.</p>
+                        <div class="chart-container h-48">
+                            <canvas id="copyrightChart"></canvas>
+                        </div>
+                        <p class="font-semibold text-[#003B73] mt-2">Est. Filing Fee: ~$65</p>
+                    </div>
+                     <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#0074B7] mb-3">Trademark</h3>
+                        <p class="text-gray-600 mb-4">Protects our brand name, "ClearView Test Column™," preventing others from using a similar name.</p>
+                        <div class="chart-container h-48">
+                            <canvas id="trademarkChart"></canvas>
+                        </div>
+                        <p class="font-semibold text-[#003B73] mt-2">Est. Filing Fee: ~$350</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#0074B7] mb-3">Utility Patent</h3>
+                        <p class="text-gray-600 mb-4">Protects the novel functionality of the invention itself—how it works and solves the problem.</p>
+                        <div class="chart-container h-48">
+                            <canvas id="patentChart"></canvas>
+                        </div>
+                        <p class="font-semibold text-[#003B73] mt-2">Est. USPTO Fees: ~$1,650+</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="launch" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003B73] mb-6 text-center">The Launch: Go-to-Market Roadmap</h2>
+                <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                    Our go-to-market strategy focuses on reaching professional users through the channels they trust most: plumbing supply wholesalers and pro-focused online retailers. The launch is phased over 12 weeks to build momentum and ensure channel readiness.
+                </p>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
+                    <div class="bg-[#003B73] p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">Phase 1: Pre-Launch</h3>
+                        <p class="font-semibold mb-2">(T-12 to T-4 Weeks)</p>
+                        <p>Secure distributor agreements, produce marketing collateral, and build initial inventory.</p>
+                    </div>
+                    <div class="bg-[#0074B7] p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">Phase 2: Launch Readiness</h3>
+                        <p class="font-semibold mb-2">(T-4 to T-0 Weeks)</p>
+                        <p>Train distributor sales staff, seed review units with influencers, and go-live with digital marketing.</p>
+                    </div>
+                    <div class="bg-[#60A5FA] p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">Phase 3: Post-Launch</h3>
+                        <p class="font-semibold mb-2">(T+1 to T+12 Weeks)</p>
+                        <p>Monitor sales data, gather customer feedback (NPS > +50 Target), and optimize marketing campaigns.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="financials" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#003B73] mb-6 text-center">The Financials: Investment & Revenue Milestones</h2>
+                 <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8">
+                    This chart summarizes the entire project's financial arc. It visualizes the upfront investment in tooling, IP, and marketing against the projected cumulative revenue from product sales. The intersection of these lines represents our target for reaching profitability and realizing a return on our investment.
+                </p>
+                <div class="chart-container h-[500px]">
+                     <canvas id="financialTimelineChart"></canvas>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="text-center mt-16 text-gray-500 text-sm">
+            <p>Infographic generated on July 19, 2025. This document provides a visual summary of the complete product development plan.</p>
+        </footer>
+    </div>
+
+<script>
+    const brilliantBlues = {
+        navy: '#003B73',
+        sky: '#0074B7',
+        lightBlue: '#60A5FA',
+        paleBlue: '#BFD7ED',
+        offWhite: '#E0F7FA'
+    };
+    
+    const tooltipTitleCallback = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+    
+    new Chart(document.getElementById('productModelChart'), {
+        type: 'radar',
+        data: {
+            labels: ['Durability', 'Usability', 'Safety', 'Low Cost', 'Clarity'],
+            datasets: [{
+                label: 'Product Priorities',
+                data: [5, 4, 5, 3, 5],
+                fill: true,
+                backgroundColor: 'rgba(0, 116, 183, 0.2)',
+                borderColor: brilliantBlues.sky,
+                pointBackgroundColor: brilliantBlues.sky,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: brilliantBlues.sky
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                 title: {
+                    display: true,
+                    text: 'Product Requirement Priorities (1-5)',
+                    font: { size: 16 },
+                    color: brilliantBlues.navy
+                },
+                ...tooltipTitleCallback.plugins
+            },
+            scales: {
+                r: {
+                    angleLines: {
+                        color: brilliantBlues.paleBlue
+                    },
+                    grid: {
+                        color: brilliantBlues.paleBlue
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 14
+                        },
+                        color: brilliantBlues.navy
+                    },
+                    ticks: {
+                        backdropColor: 'white',
+                        stepSize: 1
+                    },
+                    min: 0,
+                    max: 5
+                }
+            }
+        }
+    });
+
+     new Chart(document.getElementById('financialModelChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Cost, Margin, Price'],
+            datasets: [
+                {
+                    label: 'COGS',
+                    data: [60.50],
+                    backgroundColor: brilliantBlues.lightBlue,
+                },
+                {
+                    label: 'Gross Profit',
+                    data: [39.00],
+                    backgroundColor: brilliantBlues.sky,
+                },
+                 {
+                    label: 'MSRP',
+                    data: [199.00],
+                    backgroundColor: brilliantBlues.navy,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+             plugins: {
+                 title: {
+                    display: true,
+                    text: 'Per-Unit Financial Model ($)',
+                    font: { size: 16 },
+                    color: brilliantBlues.navy
+                },
+                ...tooltipTitleCallback.plugins
+            },
+            scales: {
+                y: { beginAtZero: true, stacked: true },
+                x: { stacked: true }
+            }
+        }
+    });
+
+    const createIPChart = (elementId, label, value) => {
+        new Chart(document.getElementById(elementId), {
+            type: 'doughnut',
+            data: {
+                labels: [label, ' '],
+                datasets: [{ data: [value, 2000-value], backgroundColor: [brilliantBlues.sky, brilliantBlues.offWhite], borderWidth: 0 }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+        });
+    };
+    createIPChart('copyrightChart', 'Copyright Fee', 65);
+    createIPChart('trademarkChart', 'Trademark Fee', 350);
+    createIPChart('patentChart', 'Patent Fees', 1650);
+    
+    new Chart(document.getElementById('financialTimelineChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Q1 (Setup)', 'Q2 (Launch)', 'Q3', 'Q4', 'Year 2', 'Year 3'],
+            datasets: [
+                {
+                    type: 'line',
+                    label: 'Cumulative Revenue',
+                    data: [0, 50000, 150000, 300000, 700000, 1100000],
+                    borderColor: brilliantBlues.sky,
+                    backgroundColor: 'rgba(0, 116, 183, 0.2)',
+                    fill: true,
+                    yAxisID: 'y_revenue',
+                    tension: 0.1
+                },
+                {
+                    type: 'bar',
+                    label: 'Investment / Expenses',
+                    data: [35000, 25000, 10000, 10000, 20000, 20000],
+                    backgroundColor: brilliantBlues.lightBlue,
+                    yAxisID: 'y_expenses'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                 title: {
+                    display: true,
+                    text: 'Projected Investment vs. Revenue',
+                    font: { size: 16 },
+                    color: brilliantBlues.navy
+                },
+                ...tooltipTitleCallback.plugins
+            },
+            scales: {
+                y_revenue: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    title: { display: true, text: 'Cumulative Revenue ($)'},
+                    ticks: { callback: function(value) { return '$' + value / 1000 + 'K'; }}
+                },
+                 y_expenses: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: { display: true, text: 'Quarterly Expenses ($)'},
+                    grid: { drawOnChartArea: false },
+                    ticks: { callback: function(value) { return '$' + value / 1000 + 'K'; }}
+                }
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
