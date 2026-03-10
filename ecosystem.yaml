@@ -1,0 +1,9 @@
+schema_version: '1.0'
+repo: scalable-lore-expert
+organ: I
+display_name: Ontological knowledge management system applying Dante's epistemological
+  framework to narrative universe modeling. Graph DB + semantic search for complex
+  fictional universes.
+delivery:
+- platform: web_app
+  status: not_started
